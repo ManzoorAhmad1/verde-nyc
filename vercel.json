@@ -6,7 +6,7 @@
       "dest": "/images/$1"
     },
     {
-      "src": "/(.*)",
+      "src": "/((?!\\.(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot|webp|avif)$).*)",
       "dest": "/index.html"
     }
   ]
