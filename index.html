@@ -1,0 +1,2497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Vintage & Vine - Premium wine tasting, fine dining, and luxury events in Napa Valley since 1924">
+    <meta name="keywords" content="wine, fine dining, Napa Valley, restaurant, wine tasting, events, luxury dining">
+    <meta property="og:title" content="Vintage & Vine">
+    <meta property="og:description" content="Experience premium wine tasting and fine dining">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb">
+    <meta property="og:url" content="https://vintageandvine.com">
+    <link rel="canonical" href="https://vintageandvine.com">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- LazySizes for lazy loading -->
+    <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.0/lazysizes.min.js" async></script>
+    
+    <style>
+        :root {
+            --emerald-deep: #051b11;
+            --gold-champagne: #c5a059;
+            --silk-cream: #f3f4e9;
+            --light-cream: #f9f8f3;
+            --dark-stone: #1a1a1a;
+            --winter-brown: #8B4513;
+            --spring-green: #90EE90;
+            --summer-gold: #FFD700;
+            --autumn-orange: #FF4500;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--emerald-deep);
+            color: var(--silk-cream);
+            overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        body.light-mode {
+            background-color: #f8f9fa;
+            color: #212529;
+        }
+        
+        .font-serif {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        
+        .bg-emerald-deep { background-color: var(--emerald-deep) !important; }
+        .text-champagne { color: var(--gold-champagne) !important; }
+        .bg-champagne { background-color: var(--gold-champagne) !important; }
+        .bg-light-cream { background-color: var(--light-cream) !important; }
+        .text-emerald-deep { color: var(--emerald-deep) !important; }
+        
+        .uppercase-label {
+            text-transform: uppercase;
+            letter-spacing: 0.4em;
+            font-weight: 700;
+            font-size: 0.7rem;
+        }
+        
+        .section-padding {
+            padding: 5rem 0;
+        }
+        
+        .rounded-xl { border-radius: 1.5rem; }
+        .rounded-2xl { border-radius: 2rem; }
+        .rounded-3xl { border-radius: 3rem; }
+        .rounded-4xl { border-radius: 4rem; }
+        
+        .shadow-4xl {
+            box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.5);
+        }
+        
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+        
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .border-champagne {
+            border-color: var(--gold-champagne) !important;
+        }
+        
+        .btn-champagne {
+            background-color: var(--gold-champagne);
+            color: var(--emerald-deep);
+            border: none;
+            padding: 0.75rem 2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-size: 0.7rem;
+        }
+        
+        .btn-champagne:hover {
+            background-color: #d4b268;
+            color: var(--emerald-deep);
+        }
+        
+        .btn-outline-champagne {
+            background-color: transparent;
+            color: var(--gold-champagne);
+            border: 1px solid var(--gold-champagne);
+            padding: 0.75rem 2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-size: 0.7rem;
+        }
+        
+        .btn-outline-champagne:hover {
+            background-color: var(--gold-champagne);
+            color: var(--emerald-deep);
+        }
+        
+        .btn-dark-emerald {
+            background-color: var(--emerald-deep);
+            color: var(--silk-cream);
+            border: none;
+            padding: 0.75rem 2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-size: 0.7rem;
+        }
+        
+        .btn-dark-emerald:hover {
+            background-color: #0a2a1d;
+            color: var(--silk-cream);
+        }
+        
+        .img-zoom {
+            overflow: hidden;
+        }
+        
+        .img-zoom img {
+            transition: transform 0.5s ease;
+        }
+        
+        .img-zoom:hover img {
+            transform: scale(1.1);
+        }
+        
+        .overlay-dark {
+            position: relative;
+        }
+        
+        .overlay-dark::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(5, 27, 17, 0.7);
+            z-index: 1;
+        }
+        
+        .overlay-dark > * {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 30s linear infinite;
+        }
+        
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            opacity: 0;
+            transition: opacity 1s ease;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .hero-slide.active {
+            opacity: 1;
+        }
+        
+        .navbar-scrolled {
+            background-color: rgba(5, 27, 17, 0.95) !important;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .wine-card {
+            background: linear-gradient(to bottom, transparent, rgba(5, 27, 17, 0.8));
+            border-radius: 2rem;
+            overflow: hidden;
+            height: 100%;
+        }
+        
+        .testimonial-quote {
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+        
+        /* Animations */
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fade-in {
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .animate-pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        /* Parallax Sections */
+        .parallax-section {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        /* Watermark Protection */
+        .protected-image {
+            position: relative;
+        }
+        
+        .protected-image::after {
+            content: 'VINTAGE & VINE';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            font-size: 3rem;
+            color: rgba(255,255,255,0.05);
+            pointer-events: none;
+            user-select: none;
+            z-index: 1;
+            font-weight: bold;
+            letter-spacing: 0.3em;
+        }
+        
+        /* Menu Items */
+        .menu-item {
+            border-bottom: 1px dashed rgba(5, 27, 17, 0.1);
+            padding-bottom: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+        
+        /* Card Styles */
+        .vault-card, .estate-card, .chef-card, .experience-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .vault-card:hover, .estate-card:hover, .chef-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        
+        .experience-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+        
+        /* Price Tag */
+        .price-tag {
+            position: absolute;
+            bottom: 1rem;
+            left: 1rem;
+            background-color: var(--silk-cream);
+            color: var(--emerald-deep);
+            padding: 0.5rem 1.5rem;
+            border-radius: 2rem;
+            font-weight: 700;
+            font-size: 0.8rem;
+            z-index: 2;
+        }
+        
+        /* Overlay Content */
+        .card-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            color: white;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .vault-card:hover .card-overlay,
+        .estate-card:hover .card-overlay {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        /* Mobile Optimizations */
+        @media (max-width: 768px) {
+            .section-padding {
+                padding: 3rem 0;
+            }
+            
+            .hero-title {
+                font-size: 3.5rem !important;
+            }
+            
+            .testimonial-quote {
+                font-size: 1.8rem;
+            }
+            
+            .display-1, .display-2, .display-3 {
+                font-size: calc(1.5rem + 3vw) !important;
+            }
+            
+            .protected-image::after {
+                font-size: 1.5rem;
+            }
+        }
+        
+        /* Loading Animation */
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(197, 160, 89, 0.3);
+            border-top-color: var(--gold-champagne);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(45deg, var(--gold-champagne), #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--emerald-deep);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--gold-champagne);
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d4b268;
+        }
+        
+        /* Weather Widget */
+        .weather-widget {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 1rem;
+            padding: 1rem;
+            display: inline-block;
+        }
+        
+        /* 3D Card Effect */
+        .card-3d {
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+        
+        .card-3d-inner {
+            transform: rotateY(0deg);
+            transition: transform 0.5s ease;
+        }
+        
+        .card-3d:hover .card-3d-inner {
+            transform: rotateY(10deg);
+        }
+        
+        /* Seasonal Colors */
+        .winter-theme { --gold-champagne: var(--winter-brown); }
+        .spring-theme { --gold-champagne: var(--spring-green); }
+        .summer-theme { --gold-champagne: var(--summer-gold); }
+        .autumn-theme { --gold-champagne: var(--autumn-orange); }
+        
+        /* Interactive Elements */
+        .interactive-btn {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .interactive-btn::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .interactive-btn:active::after {
+            width: 300px;
+            height: 300px;
+        }
+        
+        /* Glass Morphism */
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Responsive Typography */
+        @media (max-width: 576px) {
+            h1 { font-size: 2rem !important; }
+            h2 { font-size: 1.75rem !important; }
+            h3 { font-size: 1.5rem !important; }
+            .fs-5 { font-size: 1rem !important; }
+        }
+        
+        /* Print Styles */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            
+            body {
+                color: black !important;
+                background: white !important;
+            }
+            
+            a {
+                color: black !important;
+                text-decoration: none !important;
+            }
+        }
+        
+        /* High Contrast Mode */
+        @media (prefers-contrast: high) {
+            .btn-champagne {
+                background-color: #000;
+                color: #fff;
+                border: 2px solid #fff;
+            }
+        }
+        
+        /* Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Theme Toggle Button -->
+    <button id="themeToggle" class="btn btn-outline-champagne position-fixed top-3 end-3 z-1000 no-print">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="btn btn-champagne rounded-circle position-fixed bottom-3 end-3 z-1000 no-print" style="width: 50px; height: 50px; display: none;">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="position-fixed top-0 start-0 w-100 h-100 bg-emerald-deep d-flex flex-column justify-content-center align-items-center z-9999">
+        <div class="loading-spinner mb-3"></div>
+        <p class="text-champagne uppercase-label">Loading Vintage & Vine</p>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top py-3 no-print" id="mainNavbar">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <div class="  rounded-circle d-flex align-items-center justify-content-center me-2" style="width: 40px; height: 40px;">
+                    <img src="logo-Verde-NYC-green.png" style="width: 120px;" alt="">
+                </div>
+                
+            </a>
+            
+            <button class="navbar-toggler border-0 interactive-btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" id="navbarToggler">
+                <span class="text-champagne"><i class="fas fa-bars"></i></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item mx-2">
+                        <a class="nav-link text-white text-uppercase fs-7 fw-bold letter-spacing-wide" href="#vault">DINNER PARTY</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link text-white text-uppercase fs-7 fw-bold letter-spacing-wide" href="#estates">MENU</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link text-white text-uppercase fs-7 fw-bold letter-spacing-wide" href="#experiences">RESTAURANT</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link text-white text-uppercase fs-7 fw-bold letter-spacing-wide" href="#events">BAR</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link text-white text-uppercase fs-7 fw-bold letter-spacing-wide" href="#shop">GALLERY</a>
+                    </li>
+                    
+                </ul>
+                
+                <div class="d-flex gap-2">
+                    <button class="btn btn-outline-champagne d-none d-md-inline-block interactive-btn" data-bs-toggle="modal" data-bs-target="#contactModal">Concierge</button>
+                    <button class="btn btn-champagne fw-black interactive-btn" data-bs-toggle="modal" data-bs-target="#bookingModal">Book Table</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Weather Widget -->
+    <div class="weather-widget position-fixed top-3 start-3 z-1000 d-none d-md-block no-print">
+        <div class="d-flex align-items-center">
+            <i class="fas fa-sun text-champagne me-2"></i>
+            <span id="weatherInfo">72°F • Sunny</span>
+        </div>
+    </div>
+
+    <!-- Hero Carousel -->
+    <section class="hero-section position-relative vh-100" id="hero">
+        <div class="hero-slide active parallax-section" style="background-image: linear-gradient(rgba(5,27,17,0.4), rgba(5,27,17,0.9)), url('https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&q=80&w=2000');"></div>
+        <div class="hero-slide parallax-section" style="background-image: linear-gradient(rgba(5,27,17,0.4), rgba(5,27,17,0.9)), url('https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&q=80&w=2000');"></div>
+        <div class="hero-slide parallax-section" style="background-image: linear-gradient(rgba(5,27,17,0.4), rgba(5,27,17,0.9)), url('https://images.unsplash.com/photo-1474767821094-a8fe9d8c8fdd?auto=format&fit=crop&q=80&w=2000');"></div>
+        
+        <div class="container position-relative h-100 d-flex align-items-center">
+            <div class="row justify-content-center text-center animate-fade-in">
+                <div class="col-12 col-lg-10">
+                    <p class="text-champagne uppercase-label mb-4">A Century of Terroir and Tradition</p>
+                    <h1 class="hero-title font-serif fst-italic text-white mb-4 display-1 fw-normal gradient-text">The Soul of the Soil</h1>
+                    <p class="text-white text-opacity-60 fs-5 mb-5">Discover our handpicked selection of rare reds from the heart of the valley.</p>
+                    <div class="d-flex flex-column flex-md-row justify-content-center gap-4">
+                        <button class="btn btn-champagne px-5 py-3 interactive-btn" data-bs-toggle="modal" data-bs-target="#bookingModal">Book Experience</button>
+                        <button class="btn btn-outline-champagne px-5 py-3 interactive-btn" data-bs-toggle="modal" data-bs-target="#shopModal">Shop Wines</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Carousel Controls -->
+        <div class="position-absolute bottom-0 end-0 p-4 d-none d-md-block">
+            <div class="d-flex gap-3">
+                <button class="btn border border-white border-opacity-10 rounded-circle d-flex align-items-center justify-content-center text-white text-opacity-40 hover-text-champagne interactive-btn" style="width: 48px; height: 48px;" id="prevSlide">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="btn border border-white border-opacity-10 rounded-circle d-flex align-items-center justify-content-center text-white text-opacity-40 hover-text-champagne interactive-btn" style="width: 48px; height: 48px;" id="nextSlide">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Progress Bar -->
+        <div class="position-absolute bottom-0 start-0 w-100">
+            <div class="progress rounded-0" style="height: 2px; background-color: rgba(197, 160, 89, 0.2);">
+                <div class="progress-bar bg-champagne" id="carouselProgress" style="width: 100%; transition: width 5s linear;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Heritage Story -->
+    <section class="section-padding bg-light-cream text-emerald-deep">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-6 mb-5 mb-lg-0 animate-fade-in">
+                    <span class="uppercase-label text-champagne d-block mb-4">Generations of Terroir</span>
+                    <h2 class="font-serif fst-italic display-2 mb-4">Crafted by time,<br>poured by soul.</h2>
+                    <p class="text-emerald-deep text-opacity-60 fs-5 mb-5">
+                        Since 1924, Vintage & Vine has been the silent witness to a century of celebrations. 
+                        Our soil tells stories that our grapes translate into poetry for the palate.
+                    </p>
+                    
+                    <div class="row mb-5">
+                        <div class="col-6">
+                            <div class="border-start border-champagne border-opacity-40 ps-4">
+                                <p class="font-serif fst-italic display-4 mb-0">100</p>
+                                <p class="uppercase-label text-emerald-deep text-opacity-30 mt-2">Historic Vintages</p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="border-start border-champagne border-opacity-40 ps-4">
+                                <p class="font-serif fst-italic display-4 mb-0">42</p>
+                                <p class="uppercase-label text-emerald-deep text-opacity-30 mt-2">Global Estates</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#estates" class="text-decoration-none d-flex align-items-center gap-4 text-emerald-deep uppercase-label interactive-btn">
+                        <span>Journey into the Past</span>
+                        <div class="bg-emerald-deep bg-opacity-20" style="width: 48px; height: 1px;"></div>
+                    </a>
+                </div>
+                
+                <div class="col-12 col-lg-6">
+                    <div class="position-relative">
+                        <div class="position-absolute border border-champagne border-opacity-10 rounded-circle animate-pulse" style="top: -40px; bottom: -40px; left: -40px; right: -40px;"></div>
+                        <div class="position-relative rounded-4xl overflow-hidden shadow-4xl protected-image">
+                            <div class="img-zoom">
+                                <img data-src="wine1.jpg" alt="Vintage Cellar" class="lazyload img-fluid w-100">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Estates Section -->
+    <section id="estates" class="section-padding bg-white">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 col-lg-8">
+                    <span class="text-champagne uppercase-label d-block mb-3">Our Origin</span>
+                    <h2 class="font-serif fst-italic display-1 text-emerald-deep">The Terroir Collection.</h2>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-12 col-lg-8">
+                    <div class="estate-card card-3d">
+                        <div class="card-3d-inner">
+                            <img data-src="gallry1.jpg" alt="Valley Floor Estate" class="lazyload img-fluid w-100 h-100 object-cover">
+                            <div class="card-overlay">
+                                <h3 class="font-serif fst-italic fs-2">Valley Floor Estate</h3>
+                                <p class="mb-0">Rich alluvial soils producing our boldest Cabernet Sauvignons.</p>
+                                <small class="text-white text-opacity-60">38.4124° N, 122.3411° W</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-lg-4 mt-4 mt-lg-0">
+                    <div class="estate-card mb-4 card-3d">
+                        <div class="card-3d-inner">
+                            <img data-src="VERDE-DUBAI-VENUE_0016__40A8455.jpg.jpg" alt="Mist Mountain Ridge" class="lazyload img-fluid w-100 h-100 object-cover">
+                            <div class="card-overlay">
+                                <h4 class="font-serif fst-italic fs-4">Mist Mountain Ridge</h4>
+                                <p class="small mb-0">High elevation vines kissed by morning fog.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="estate-card card-3d">
+                        <div class="card-3d-inner">
+                            <img data-src= "VERDE-DUBAI-VENUE_0018__40A8460.jpg.jpg" style="width: 100%;" alt="North Shore Terraces" class="lazyload img-fluid w-100 h-100 object-cover">
+                            <div class="card-overlay">
+                                <h4 class="font-serif fst-italic fs-4">North Shore Terraces</h4>
+                                <p class="small mb-0">Rocky shale slopes for mineral-forward whites.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chef Specials -->
+    <section class="section-padding bg-emerald-deep">
+        <div class="container">
+            <div class="row justify-content-between align-items-end mb-5">
+                <div class="col-12 col-md-6 mb-4 mb-md-0">
+                    <span class="text-champagne uppercase-label d-block mb-2">Gastronomy</span>
+                    <h2 class="font-serif fst-italic display-1 text-white">Curation Gallery.</h2>
+                </div>
+                <div class="col-12 col-md-6 text-md-end">
+                    <button class="btn border-0 text-champagne border-bottom border-champagne border-opacity-20 pb-2 px-0 uppercase-label interactive-btn" data-bs-toggle="modal" data-bs-target="#menuModal">Full Dinner Menu</button>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-12 col-md-4">
+                    <div class="chef-card card-3d">
+                        <div class="card-3d-inner">
+                            <div class="img-zoom">
+                                <img data-src="food1.jpg" alt="Wild Truffle Risotto" class="lazyload img-fluid w-100">
+                            </div>
+                            <div class="price-tag">$42</div>
+                            <div class="p-4">
+                                <h3 class="font-serif fst-italic fs-3 mb-3">Wild Truffle Risotto</h3>
+                                <p class="text-white text-opacity-60 small">Arborio rice infused with winter black truffles and 24-month aged Parmigiano-Reggiano.</p>
+                                <div class="mt-3">
+                                    <span class="badge bg-champagne text-emerald-deep">Signature Dish</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-4">
+                    <div class="chef-card card-3d">
+                        <div class="card-3d-inner">
+                            <div class="img-zoom">
+                                <img data-src="food2.jpg" alt="Charred Octopus" class="lazyload img-fluid w-100">
+                            </div>
+                            <div class="price-tag">$38</div>
+                            <div class="p-4">
+                                <h3 class="font-serif fst-italic fs-3 mb-3">Charred Octopus</h3>
+                                <p class="text-white text-opacity-60 small">Spanish octopus with smoked paprika, saffron aioli, and fingerling potatoes.</p>
+                                <div class="mt-3">
+                                    <span class="badge bg-champagne text-emerald-deep">Chef's Special</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-4">
+                    <div class="chef-card card-3d">
+                        <div class="card-3d-inner">
+                            <div class="img-zoom">
+                                <img data-src="food3.jpg" alt="Dry-Aged Wagyu" class="lazyload img-fluid w-100">
+                            </div>
+                            <div class="price-tag">$85</div>
+                            <div class="p-4">
+                                <h3 class="font-serif fst-italic fs-3 mb-3">Dry-Aged Wagyu</h3>
+                                <p class="text-white text-opacity-60 small">A5 Japanese Wagyu served with marrow-infused jus and heritage root vegetables.</p>
+                                <div class="mt-3">
+                                    <span class="badge bg-champagne text-emerald-deep">Premium Cut</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section class="section-padding bg-emerald-deep">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-6 order-2 order-lg-1 mt-5 mt-lg-0">
+                    <div class="position-relative">
+                        <div class="position-absolute border border-champagne border-opacity-10 rounded-circle" style="top: -40px; bottom: -40px; left: -40px; right: -40px;"></div>
+                        <div class="position-relative rounded-4xl overflow-hidden protected-image">
+                            <img data-src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&q=80&w=1000" alt="Head Sommelier" class="lazyload img-fluid w-100 grayscale">
+                            <div class="position-absolute bottom-0 start-0 p-4">
+                                <p class="text-champagne uppercase-label small mb-1">Master of the Cellar</p>
+                                <h4 class="text-white font-serif fst-italic fs-3">Marcus Thorne</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-lg-6 order-1 order-lg-2">
+                    <span class="text-champagne uppercase-label d-block mb-3">The Philosophy</span>
+                    <h2 class="font-serif fst-italic display-1 text-white mb-4">Great wine is a conversation with time.</h2>
+                    
+                    <blockquote class="border-start border-champagne border-opacity-30 ps-4 mb-5">
+                        <p class="text-white text-opacity-60 fs-5 fst-italic">"We do not simply pour a glass of wine. We present a capsule of weather, soil, and labor from a specific moment in history. My duty is to ensure that story reaches your palate in its purest form."</p>
+                    </blockquote>
+                    
+                    <div class="mb-4">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="flex-grow-1" style="height: 1px; background-color: rgba(255,255,255,0.1);"></div>
+                            <span class="text-white text-opacity-40 uppercase-label small">Accreditations</span>
+                            <div class="flex-grow-1" style="height: 1px; background-color: rgba(255,255,255,0.1);"></div>
+                        </div>
+                        <div class="d-flex flex-wrap gap-3 text-uppercase small">
+                            <span class="text-white">Master Sommelier (CMS)</span>
+                            <span class="text-white">WSET Level 4 Diploma</span>
+                            <span class="text-white">Oenology Merit 2012</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Signature -->
+                    <div class="mt-5">
+                        <svg class="w-50" viewBox="0 0 200 60" fill="currentColor">
+                            <path d="M20 40 Q 60 15 100 40 T 180 40" fill="none" stroke="var(--gold-champagne)" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <p class="text-white text-opacity-60 mt-2">Marcus Thorne, Head Sommelier</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="section-padding bg-light-cream">
+        <div class="container">
+            <div class="row justify-content-center text-center mb-5">
+                <div class="col-12 col-lg-8">
+                    <span class="text-champagne uppercase-label d-block mb-3">The Gastronomic Experience</span>
+                    <h2 class="font-serif fst-italic display-1 text-emerald-deep mb-4">Meticulously Handcrafted.</h2>
+                    
+                    <div class="d-inline-flex bg-white p-2 rounded-pill">
+                        <button class="btn px-4 py-2 rounded-pill text-uppercase fw-bold small active interactive-btn" id="foodMenuBtn">Culinary</button>
+                        <button class="btn px-4 py-2 rounded-pill text-uppercase fw-bold small interactive-btn" id="wineMenuBtn">The Cellar</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="foodMenu" class="menu-content animate-fade-in">
+                <div class="row">
+                    <div class="col-12 col-md-6 mb-5">
+                        <h3 class="font-serif fst-italic fs-2 mb-4 border-bottom pb-3">Starters</h3>
+                        
+                        <div class="menu-item">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h4 class="font-serif fst-italic fs-4">Oysters Rockefeller</h4>
+                                <span class="text-champagne fw-bold">$28</span>
+                            </div>
+                            <p class="text-emerald-deep text-opacity-60">Half-dozen blue point oysters baked with spinach, parmesan, and a dash of Pernod.</p>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h4 class="font-serif fst-italic fs-4">Wild Mushroom Tart</h4>
+                                <span class="text-champagne fw-bold">$22</span>
+                            </div>
+                            <p class="text-emerald-deep text-opacity-60">Chanterelles and cremini mushrooms on a flaky butter crust with goat cheese mousse.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-12 col-md-6 mb-5">
+                        <h3 class="font-serif fst-italic fs-2 mb-4 border-bottom pb-3">Signature Mains</h3>
+                        
+                        <div class="menu-item">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h4 class="font-serif fst-italic fs-4">Pan-Seared Scallops</h4>
+                                <span class="text-champagne fw-bold">$48</span>
+                            </div>
+                            <p class="text-emerald-deep text-opacity-60">U10 scallops served with saffron risotto and micro-greens.</p>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h4 class="font-serif fst-italic fs-4">Venison Loin</h4>
+                                <span class="text-champagne fw-bold">$58</span>
+                            </div>
+                            <p class="text-emerald-deep text-opacity-60">Juniper-crusted venison with blackberry reduction and heritage carrots.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="wineMenu" class="menu-content d-none animate-fade-in">
+                <div class="row">
+                    <div class="col-12 col-md-6 mb-5">
+                        <h3 class="font-serif fst-italic fs-2 mb-4 border-bottom pb-3">The Library Reserve</h3>
+                        
+                        <div class="menu-item">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h4 class="font-serif fst-italic fs-4">Cabernet Sauvignon 1974</h4>
+                                <span class="text-champagne fw-bold">$850</span>
+                            </div>
+                            <p class="text-emerald-deep text-opacity-60">An iconic vintage from our founding year. Notes of cedar and dark fruit.</p>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h4 class="font-serif fst-italic fs-4">Merlot Estate 1992</h4>
+                                <span class="text-champagne fw-bold">$320</span>
+                            </div>
+                            <p class="text-emerald-deep text-opacity-60">Perfectly aged with velvety tannins and an elegant finish.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-12 col-md-6 mb-5">
+                        <h3 class="font-serif fst-italic fs-2 mb-4 border-bottom pb-3">Seasonal Flights</h3>
+                        
+                        <div class="menu-item">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h4 class="font-serif fst-italic fs-4">Sommelier Choice</h4>
+                                <span class="text-champagne fw-bold">$95</span>
+                            </div>
+                            <p class="text-emerald-deep text-opacity-60">A curated selection of three distinct varietals from our current harvest.</p>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h4 class="font-serif fst-italic fs-4">Bubbles & Bliss</h4>
+                                <span class="text-champagne fw-bold">$110</span>
+                            </div>
+                            <p class="text-emerald-deep text-opacity-60">A sparkling journey through our Champagne and Cava collections.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <p class="text-emerald-deep text-opacity-20 uppercase-label small">* Our ingredients are sourced locally from organic heritage farms. Please inform your concierge of any specific dietary requirements.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vault Gallery -->
+    <section id="vault" class="section-padding bg-emerald-deep">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="text-champagne uppercase-label d-block mb-3">Exclusive Access</span>
+                <h2 class="font-serif fst-italic display-1 text-white">The Library Vault.</h2>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="vault-card card-3d">
+                        <div class="card-3d-inner protected-image" style="height: 400px;">
+                            <img data-src="wine-2.jpg" alt="1974 Founder's Reserve" class="lazyload img-fluid w-100 h-100 object-cover">
+                            <div class="card-overlay">
+                                <h3 class="font-serif fst-italic fs-2 text-white">Founder's Reserve</h3>
+                                <p class="text-white text-opacity-60 small">Notes of dried plum, tobacco leaf, and ancient cedar.</p>
+                                <div class="mt-2">
+                                    <span class="badge bg-champagne text-emerald-deep">1974 Vintage</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="vault-card card-3d">
+                        <div class="card-3d-inner protected-image" style="height: 400px;">
+                            <img data-src="wine-3.jpg" alt="1988 Grand Blanc de Blancs" class="lazyload img-fluid w-100 h-100 object-cover">
+                            <div class="card-overlay">
+                                <h3 class="font-serif fst-italic fs-2 text-white">Grand Blanc de Blancs</h3>
+                                <p class="text-white text-opacity-60 small">Toasted brioche, lemon curd, and a long mineral finish.</p>
+                                <div class="mt-2">
+                                    <span class="badge bg-champagne text-emerald-deep">1988 Vintage</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="vault-card card-3d">
+                        <div class="card-3d-inner protected-image" style="height: 400px;">
+                            <img data-src="wine-4.jpg" alt="1992 Mountain Merlot" class="lazyload img-fluid w-100 h-100 object-cover">
+                            <div class="card-overlay">
+                                <h3 class="font-serif fst-italic fs-2 text-white">Mountain Merlot</h3>
+                                <p class="text-white text-opacity-60 small">Black currant, velvet tannins, and hints of violet.</p>
+                                <div class="mt-2">
+                                    <span class="badge bg-champagne text-emerald-deep">1992 Vintage</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="vault-card card-3d">
+                        <div class="card-3d-inner protected-image" style="height: 400px;">
+                            <img data-src="https://images.unsplash.com/photo-1516594915697-87eb3b1c14ea?auto=format&fit=crop&q=80&w=600" alt="2001 Syrah Heritage" class="lazyload img-fluid w-100 h-100 object-cover">
+                            <div class="card-overlay">
+                                <h3 class="font-serif fst-italic fs-2 text-white">Syrah Heritage</h3>
+                                <p class="text-white text-opacity-60 small">Black pepper, smoked meat, and intense dark berries.</p>
+                                <div class="mt-2">
+                                    <span class="badge bg-champagne text-emerald-deep">2001 Vintage</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="#" class="text-champagne text-decoration-none d-inline-flex align-items-center gap-3 uppercase-label fw-bold interactive-btn" data-bs-toggle="modal" data-bs-target="#vaultModal">
+                    <span>Request Full Library List</span>
+                    <div class="bg-champagne" style="width: 48px; height: 1px;"></div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Pricing -->
+    <section id="experiences" class="section-padding bg-light-cream">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="text-champagne uppercase-label d-block mb-3">Curated Journeys</span>
+                <h2 class="font-serif fst-italic display-1 text-emerald-deep mb-4">Tasting Experiences.</h2>
+                <p class="text-emerald-deep text-opacity-60 fs-5">Choose a path through our storied cellar, curated by our head sommelier.</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-12 col-md-4">
+                    <div class="experience-card bg-white shadow-lg">
+                        <div class="img-zoom">
+                            <img data-src="expen1.jpg" alt="The Explorer" class="lazyload img-fluid w-100">
+                        </div>
+                        <div class="p-4">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <h3 class="font-serif fst-italic fs-3">The Explorer</h3>
+                                <span class="text-champagne fw-bold fs-4">$75</span>
+                            </div>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-circle text-champagne me-2 small"></i> 4 Artisanal Wine Flights</li>
+                                <li class="mb-2"><i class="fas fa-circle text-champagne me-2 small"></i> Local Cheese Pairing</li>
+                                <li class="mb-2"><i class="fas fa-circle text-champagne me-2 small"></i> 45 Minute Session</li>
+                                <li class="mb-3"><i class="fas fa-circle text-champagne me-2 small"></i> Sommelier Guided</li>
+                            </ul>
+                            <button class="btn btn-dark-emerald w-100 py-3 interactive-btn" data-bs-toggle="modal" data-bs-target="#bookingModal">Reserve Experience</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-4">
+                    <div class="experience-card bg-white shadow-lg">
+                        <div class="img-zoom">
+                            <img data-src="expen2.jpg" alt="The Connoisseur" class="lazyload img-fluid w-100">
+                        </div>
+                        <div class="p-4">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <h3 class="font-serif fst-italic fs-3">The Connoisseur</h3>
+                                <span class="text-champagne fw-bold fs-4">$150</span>
+                            </div>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-circle text-champagne me-2 small"></i> 6 Reserve Wine Flights</li>
+                                <li class="mb-2"><i class="fas fa-circle text-champagne me-2 small"></i> Charcuterie Board</li>
+                                <li class="mb-2"><i class="fas fa-circle text-champagne me-2 small"></i> Cellar Tour Included</li>
+                                <li class="mb-3"><i class="fas fa-circle text-champagne me-2 small"></i> 90 Minute Session</li>
+                            </ul>
+                            <button class="btn btn-dark-emerald w-100 py-3 interactive-btn" data-bs-toggle="modal" data-bs-target="#bookingModal">Reserve Experience</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-4">
+                    <div class="experience-card bg-white shadow-lg">
+                        <div class="img-zoom">
+                            <img data-src="expen3.jpg" alt="The Estate Grand" class="lazyload img-fluid w-100">
+                        </div>
+                        <div class="p-4">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <h3 class="font-serif fst-italic fs-3">The Estate Grand</h3>
+                                <span class="text-champagne fw-bold fs-4">$350</span>
+                            </div>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-circle text-champagne me-2 small"></i> Exclusive Cellar Dining</li>
+                                <li class="mb-2"><i class="fas fa-circle text-champagne me-2 small"></i> 5-Course Pairing Menu</li>
+                                <li class="mb-2"><i class="fas fa-circle text-champagne me-2 small"></i> Library Vintage Access</li>
+                                <li class="mb-3"><i class="fas fa-circle text-champagne me-2 small"></i> Personal Sommelier</li>
+                            </ul>
+                            <button class="btn btn-dark-emerald w-100 py-3 interactive-btn" data-bs-toggle="modal" data-bs-target="#bookingModal">Reserve Experience</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <p class="text-emerald-deep text-opacity-60 fst-italic">* Custom group bookings for 10+ available upon request.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wine Categories -->
+    <section class="section-padding bg-light-cream">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="text-champagne uppercase-label d-block mb-3">Our Collections</span>
+                <h2 class="font-serif fst-italic display-1 text-emerald-deep">Explore by Varietal</h2>
+            </div>
+            
+            <div class="d-flex flex-wrap justify-content-center gap-3 mb-5">
+                <button class="btn btn-champagne px-4 py-2 rounded-pill text-uppercase fw-bold small active interactive-btn" data-filter="all">Show All</button>
+                <button class="btn btn-outline-champagne px-4 py-2 rounded-pill text-uppercase fw-bold small interactive-btn" data-filter="red">Red</button>
+                <button class="btn btn-outline-champagne px-4 py-2 rounded-pill text-uppercase fw-bold small interactive-btn" data-filter="white">White</button>
+                <button class="btn btn-outline-champagne px-4 py-2 rounded-pill text-uppercase fw-bold small interactive-btn" data-filter="rose">Rosé</button>
+                <button class="btn btn-outline-champagne px-4 py-2 rounded-pill text-uppercase fw-bold small interactive-btn" data-filter="sparkling">Sparkling</button>
+            </div>
+            
+            <div class="row g-4" id="wineCategories">
+                <div class="col-12 col-md-6 col-lg-3" data-category="red">
+                    <div class="wine-card card-3d">
+                        <div class="card-3d-inner">
+                            <img data-src="wine-6.jpg" alt="Bold Reds" class="lazyload img-fluid w-100">
+                            <div class="p-4">
+                                <h3 class="font-serif fst-italic fs-3 text-white">Bold Reds</h3>
+                                <p class="text-white text-opacity-60">Cabernet, Merlot, & Pinot Noir</p>
+                                <div class="mt-3">
+                                    <span class="badge bg-champagne text-emerald-deep">12 Varietals</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-6 col-lg-3" data-category="white">
+                    <div class="wine-card card-3d">
+                        <div class="card-3d-inner">
+                            <img data-src="caller3.jpg" alt="Elegant Whites" class="lazyload img-fluid w-100">
+                            <div class="p-4">
+                                <h3 class="font-serif fst-italic fs-3 text-white">Elegant Whites</h3>
+                                <p class="text-white text-opacity-60">Chardonnay & Sauvignon Blanc</p>
+                                <div class="mt-3">
+                                    <span class="badge bg-champagne text-emerald-deep">8 Varietals</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-6 col-lg-3" data-category="rose">
+                    <div class="wine-card card-3d">
+                        <div class="card-3d-inner">
+                            <img data-src=" wine-3.jpg" alt="Velvet Rosé" class="lazyload img-fluid w-100">
+                            <div class="p-4">
+                                <h3 class="font-serif fst-italic fs-3 text-white">Velvet Rosé</h3>
+                                <p class="text-white text-opacity-60">Provençal & Summer Blends</p>
+                                <div class="mt-3">
+                                    <span class="badge bg-champagne text-emerald-deep">6 Varietals</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-6 col-lg-3" data-category="sparkling">
+                    <div class="wine-card card-3d">
+                        <div class="card-3d-inner">
+                            <img data-src="wine-2.jpg" alt="Celebration" class="lazyload img-fluid w-100">
+                            <div class="p-4">
+                                <h3 class="font-serif fst-italic fs-3 text-white">Celebration</h3>
+                                <p class="text-white text-opacity-60">Champagne & Artisanal Bubbles</p>
+                                <div class="mt-3">
+                                    <span class="badge bg-champagne text-emerald-deep">10 Varietals</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Wine Pairing Quiz -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="bg-emerald-deep rounded-3xl p-5 text-center">
+                        <h3 class="font-serif fst-italic text-white mb-3">Find Your Perfect Wine</h3>
+                        <p class="text-white text-opacity-60 mb-4">Take our 30-second pairing quiz</p>
+                        <button class="btn btn-champagne interactive-btn" data-bs-toggle="modal" data-bs-target="#pairingQuizModal">Start Quiz</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wine Shop Section -->
+    <section id="shop" class="section-padding bg-white">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="text-champagne uppercase-label d-block mb-3">Purchase Online</span>
+                <h2 class="font-serif fst-italic display-1 text-emerald-deep">The Cellar Shop</h2>
+                <p class="text-emerald-deep text-opacity-60">Curated selections available for delivery</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card border-0 shadow hover-lift">
+                        <div class="img-zoom">
+                            <img data-src="caller1.jpg" class="card-img-top lazyload" alt="Cabernet 2018">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="font-serif fst-italic">Cabernet 2018</h5>
+                            <p class="text-champagne fw-bold">$89.99</p>
+                            <div class="d-flex justify-content-center mb-3">
+                                <i class="fas fa-star text-champagne"></i>
+                                <i class="fas fa-star text-champagne"></i>
+                                <i class="fas fa-star text-champagne"></i>
+                                <i class="fas fa-star text-champagne"></i>
+                                <i class="fas fa-star-half-alt text-champagne"></i>
+                            </div>
+                            <button class="btn btn-dark-emerald w-100 add-to-cart" data-id="1" data-name="Cabernet 2018" data-price="89.99">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card border-0 shadow hover-lift">
+                        <div class="img-zoom">
+                            <img data-src="caller5.jpg" class="card-img-top lazyload" alt="Chardonnay 2020">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="font-serif fst-italic">Chardonnay 2020</h5>
+                            <p class="text-champagne fw-bold">$65.99</p>
+                            <div class="d-flex justify-content-center mb-3">
+                                <i class="fas fa-star text-champagne"></i>
+                                <i class="fas fa-star text-champagne"></i>
+                                <i class="fas fa-star text-champagne"></i>
+                                <i class="fas fa-star text-champagne"></i>
+                                <i class="far fa-star text-champagne"></i>
+                            </div>
+                            <button class="btn btn-dark-emerald w-100 add-to-cart" data-id="2" data-name="Chardonnay 2020" data-price="65.99">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card border-0 shadow hover-lift">
+                        <div class="img-zoom">
+                            <img data-src="caller3.jpg" class="card-img-top lazyload" alt="Sparkling Rosé">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="font-serif fst-italic">Sparkling Rosé</h5>
+                            <p class="text-champagne fw-bold">$72.50</p>
+                            <div class="d-flex justify-content-center mb-3">
+                                <i class="fas fa-star text-champagne"></i>
+                                <i class="fas fa-star text-champagne"></i>
+                                <i class="fas fa-star text-champagne"></i>
+                                <i class="fas fa-star text-champagne"></i>
+                                <i class="fas fa-star text-champagne"></i>
+                            </div>
+                            <button class="btn btn-dark-emerald w-100 add-to-cart" data-id="3" data-name="Sparkling Rosé" data-price="72.50">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Shopping Cart Indicator -->
+            <div class="text-center mt-5">
+                <button class="btn btn-outline-champagne position-relative" data-bs-toggle="modal" data-bs-target="#cartModal">
+                    <i class="fas fa-shopping-cart me-2"></i>View Cart
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-champagne text-emerald-deep" id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gift Cards Section -->
+    <section class="section-padding bg-champagne">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <h2 class="font-serif fst-italic display-2 text-emerald-deep">The Perfect Gift</h2>
+                    <p class="text-emerald-deep">Give the experience of fine wine tasting</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-gift me-2"></i> Digital or Physical Cards</li>
+                        <li class="mb-2"><i class="fas fa-shipping-fast me-2"></i> Free Shipping</li>
+                        <li class="mb-2"><i class="fas fa-calendar-alt me-2"></i> No Expiration Date</li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="bg-white rounded-3xl p-4 shadow-lg">
+                        <h4 class="font-serif fst-italic mb-3">Digital Gift Card</h4>
+                        <div class="mb-3">
+                            <label class="form-label">Amount ($)</label>
+                            <input type="number" class="form-control" id="giftCardAmount" min="25" value="100" step="25">
+                        </div>
+                        <div class="d-flex gap-2 mb-3">
+                            <button class="btn btn-outline-champagne flex-grow-1" onclick="document.getElementById('giftCardAmount').value = '50'">$50</button>
+                            <button class="btn btn-outline-champagne flex-grow-1" onclick="document.getElementById('giftCardAmount').value = '100'">$100</button>
+                            <button class="btn btn-outline-champagne flex-grow-1" onclick="document.getElementById('giftCardAmount').value = '250'">$250</button>
+                        </div>
+                        <button class="btn btn-champagne w-100" onclick="purchaseGiftCard()">Purchase Gift Card</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="section-padding bg-white">
+        <div class="container">
+            <div class="row justify-content-between align-items-end mb-5">
+                <div class="col-12 col-lg-6 mb-4 mb-lg-0">
+                    <span class="text-champagne uppercase-label d-block mb-3">Unforgettable Occasions</span>
+                    <h2 class="font-serif fst-italic display-1 text-emerald-deep mb-4">Grand Celebrations.</h2>
+                    <p class="text-emerald-deep text-opacity-60 fs-5">
+                        From the whispered "I do" to the grandest corporate gala, our estates provide the perfect canvas for your most cherished memories.
+                    </p>
+                </div>
+                <div class="col-12 col-lg-6 text-lg-end">
+                    <button class="btn btn-dark-emerald px-5 py-3 interactive-btn" data-bs-toggle="modal" data-bs-target="#eventsModal">Request Event Proposal</button>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-12 col-md-6">
+                    <div class="estate-card card-3d">
+                        <div class="card-3d-inner">
+                            <img data-src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&q=80&w=1200" alt="Bespoke Weddings" class="lazyload img-fluid w-100 h-100 object-cover">
+                            <div class="card-overlay">
+                                <span class="text-champagne uppercase-label small d-block mb-2">Sacred Vows</span>
+                                <h3 class="font-serif fst-italic fs-2">Bespoke Weddings</h3>
+                                <p class="mb-0">A Symphony of Love</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-6">
+                    <div class="estate-card card-3d">
+                        <div class="card-3d-inner">
+                            <img data-src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=1200" alt="Corporate Galas" class="lazyload img-fluid w-100 h-100 object-cover">
+                            <div class="card-overlay">
+                                <span class="text-champagne uppercase-label small d-block mb-2">Executive Excellence</span>
+                                <h3 class="font-serif fst-italic fs-2">Corporate Galas</h3>
+                                <p class="mb-0">Refined Networking</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Event Calendar -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="bg-light-cream rounded-4xl p-5">
+                        <h4 class="font-serif fst-italic text-emerald-deep mb-4 text-center">Upcoming Events</h4>
+                        <div class="row text-center" id="eventCalendar">
+                            <!-- Events will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wine Slider -->
+    <section class="section-padding bg-emerald-deep overflow-hidden">
+        <div class="container">
+            <div class="row justify-content-between align-items-end mb-5">
+                <div class="col-12 col-md-6 mb-4 mb-md-0">
+                    <span class="text-champagne uppercase-label d-block mb-3">Cellar Master's Choice</span>
+                    <h2 class="font-serif fst-italic display-1 text-white">The Seasonal Edit.</h2>
+                </div>
+                <div class="col-12 col-md-6 d-none d-md-block">
+                    <p class="text-white text-opacity-30 text-end">
+                        A continuous rotation of our rarest acquisitions, currently maturing in our climate-controlled vault.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="marquee-container" id="wineMarquee">
+                <div class="marquee-content">
+                    <!-- Content will be duplicated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section-padding bg-white border-top border-bottom">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-8 text-center">
+                    <span class="text-champagne uppercase-label d-block mb-4">The Guest Journal</span>
+                    
+                    <div class="position-relative">
+                        <span class="position-absolute top-0 start-50 translate-middle text-champagne text-opacity-10 display-1 font-serif fst-italic">"</span>
+                        
+                        <div class="pt-5">
+                            <p class="testimonial-quote font-serif fst-italic text-emerald-deep mb-5">
+                                An unparalleled sensory journey. The pairing of the 1982 Reserve with the Wagyu was nothing short of poetic.
+                            </p>
+                            
+                            <div>
+                                <p class="text-emerald-deep fw-bold text-uppercase mb-1">Elena Moretti</p>
+                                <p class="text-emerald-deep text-opacity-60">Culinary Critic</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial Navigation -->
+                    <div class="d-flex justify-content-center gap-3 mt-5">
+                        <button class="btn btn-outline-champagne rounded-circle" style="width: 40px; height: 40px;" onclick="prevTestimonial()"><i class="fas fa-chevron-left"></i></button>
+                        <button class="btn btn-outline-champagne rounded-circle" style="width: 40px; height: 40px;" onclick="nextTestimonial()"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marquee -->
+    <section class="py-5 bg-emerald-deep overflow-hidden border-y border-white border-opacity-5">
+        <div class="marquee-container">
+            <div class="marquee-content text-nowrap">
+                <span class="display-3 font-serif fst-italic text-white text-opacity-5 me-5">Terroir • Heritage • Bouquet • Vintage • Reserve • Bouquet • Vintage • Heritage</span>
+                <span class="display-3 font-serif fst-italic text-white text-opacity-5 me-5">Terroir • Heritage • Bouquet • Vintage • Reserve • Bouquet • Vintage • Heritage</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation CTA -->
+    <section id="membership" class="section-padding position-relative overlay-dark">
+        <div class="parallax-section" style="background-image: url('https://images.unsplash.com/photo-1543412849-c45060991c1d?auto=format&fit=crop&q=80&w=2000');"></div>
+        
+        <div class="container position-relative">
+            <div class="row justify-content-center text-center">
+                <div class="col-12 col-lg-8">
+                    <span class="text-champagne uppercase-label d-block mb-4">The Invitation</span>
+                    <h2 class="font-serif fst-italic display-1 text-white mb-5">Become a Steward of the Vine.</h2>
+                    <p class="text-white text-opacity-60 fs-5 mb-5">
+                        Gain allocation access to our most prestigious library releases and priority bookings for our Michelin-starred estates.
+                    </p>
+                    <button class="btn btn-champagne px-5 py-3 fs-5 interactive-btn" data-bs-toggle="modal" data-bs-target="#membershipModal">Join Membership</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding bg-light-cream">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <h2 class="font-serif fst-italic display-4 text-emerald-deep mb-4">Visit Us</h2>
+                    
+                    <div class="mb-5">
+                        <h4 class="text-champagne mb-3">Vintage & Vine Estates</h4>
+                        <p class="text-emerald-deep mb-2">
+                            <i class="fas fa-map-marker-alt text-champagne me-2"></i>
+                            122 Wine Valley Road, Napa Valley, CA 94558
+                        </p>
+                        <p class="text-emerald-deep mb-2">
+                            <i class="fas fa-phone text-champagne me-2"></i>
+                            +1 (800) VIN-1924
+                        </p>
+                        <p class="text-emerald-deep">
+                            <i class="fas fa-envelope text-champagne me-2"></i>
+                            concierge@vintageandvine.com
+                        </p>
+                    </div>
+                    
+                    <!-- Hours -->
+                    <div class="mb-5">
+                        <h5 class="text-emerald-deep mb-3">Hours of Operation</h5>
+                        <div class="row">
+                            <div class="col-6">
+                                <p class="mb-1">Monday - Thursday</p>
+                                <p class="mb-1">Friday - Saturday</p>
+                                <p class="mb-0">Sunday</p>
+                            </div>
+                            <div class="col-6 text-end">
+                                <p class="mb-1">5 PM - 11 PM</p>
+                                <p class="mb-1">5 PM - 12 AM</p>
+                                <p class="mb-0">4 PM - 10 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Media -->
+                    <div>
+                        <h5 class="text-emerald-deep mb-3">Connect With Us</h5>
+                        <div class="d-flex gap-3">
+                            <a href="#" class="text-champagne fs-4"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="text-champagne fs-4"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="text-champagne fs-4"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-champagne fs-4"><i class="fab fa-pinterest"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <h3 class="font-serif fst-italic text-emerald-deep mb-4">Send a Message</h3>
+                    <form id="contactForm">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control bg-transparent border-emerald-deep" placeholder="Your Name" required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" class="form-control bg-transparent border-emerald-deep" placeholder="Your Email" required>
+                            </div>
+                            <div class="col-12">
+                                <input type="tel" class="form-control bg-transparent border-emerald-deep" placeholder="Phone Number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                            </div>
+                            <div class="col-12">
+                                <select class="form-select bg-transparent border-emerald-deep">
+                                    <option>General Inquiry</option>
+                                    <option>Reservation Inquiry</option>
+                                    <option>Private Events</option>
+                                    <option>Wine Club</option>
+                                    <option>Press & Media</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <textarea class="form-control bg-transparent border-emerald-deep" rows="5" placeholder="Your Message" required></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-champagne w-100">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Google Maps Placeholder -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="bg-emerald-deep rounded-3xl p-4 text-center">
+                        <h4 class="text-white mb-3">Find Us</h4>
+                        <div class="ratio ratio-16x9">
+                            <!-- Replace with actual Google Maps embed -->
+                            <div class="bg-light-cream rounded-2xl d-flex align-items-center justify-content-center">
+                                <div class="text-center">
+                                    <i class="fas fa-map-marked-alt text-champagne fs-1 mb-3"></i>
+                                    <p class="text-emerald-deep">Google Maps Integration</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-emerald-deep text-white border-top border-white border-opacity-5">
+        <!-- Newsletter -->
+        <div class="container py-5 border-bottom border-white border-opacity-5">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-6 mb-5 mb-lg-0">
+                    <span class="text-champagne uppercase-label d-block mb-3">Exclusive Concierge</span>
+                    <h2 class="font-serif fst-italic display-4 text-white mb-4">Enter the Vault.</h2>
+                    <p class="text-white text-opacity-60">
+                        Receive curated insights from our cellar master and invitations to private estate harvests.
+                    </p>
+                </div>
+                
+                <div class="col-12 col-lg-6">
+                    <div class="border-bottom border-champagne border-opacity-30 pb-3">
+                        <div class="row g-3">
+                            <div class="col-12 col-md-8">
+                                <input type="email" class="form-control bg-transparent border-0 text-white fs-5" placeholder="Your private email" id="newsletterEmail">
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <button class="btn btn-champagne w-100" onclick="subscribeNewsletter()">Subscribe</button>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-white text-opacity-10 uppercase-label small mt-3">Privacy Secured by Vintage & Vine Estates.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Links -->
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-3 mb-5 mb-lg-0">
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="border border-champagne border-opacity-50 rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 48px; height: 48px;">
+                            <span class="text-champagne font-serif fw-bold fs-4">V&V</span>
+                        </div>
+                        <span class="text-white font-serif fst-italic fs-3">Vintage & Vine</span>
+                    </div>
+                    <p class="text-white text-opacity-60 small mb-4">
+                        Stewards of the land since 1924. Dedicated to the slow art of preservation and the celebration of the moment.
+                    </p>
+                    <div class="d-flex gap-4">
+                        <a href="#" class="text-white text-opacity-30 text-uppercase small fw-bold">Insta</a>
+                        <a href="#" class="text-white text-opacity-30 text-uppercase small fw-bold">Pint</a>
+                        <a href="#" class="text-white text-opacity-30 text-uppercase small fw-bold">Vim</a>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-6 col-lg-3 mb-5 mb-lg-0">
+                    <h4 class="text-champagne uppercase-label small mb-4">Collection</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><a href="#vault" class="text-white text-opacity-60 text-uppercase small fw-bold text-decoration-none">The Cellar</a></li>
+                        <li class="mb-3"><a href="#estates" class="text-white text-opacity-60 text-uppercase small fw-bold text-decoration-none">Estates</a></li>
+                        <li class="mb-3"><a href="#experiences" class="text-white text-opacity-60 text-uppercase small fw-bold text-decoration-none">Experiences</a></li>
+                        <li class="mb-3"><a href="#events" class="text-white text-opacity-60 text-uppercase small fw-bold text-decoration-none">Events</a></li>
+                        <li><a href="#shop" class="text-white text-opacity-60 text-uppercase small fw-bold text-decoration-none">Wine Shop</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
+                    <h4 class="text-champagne uppercase-label small mb-4">Legal</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><a href="#" class="text-white text-opacity-60 text-decoration-none">Privacy Policy</a></li>
+                        <li class="mb-3"><a href="#" class="text-white text-opacity-60 text-decoration-none">Terms of Service</a></li>
+                        <li class="mb-3"><a href="#" class="text-white text-opacity-60 text-decoration-none">Accessibility</a></li>
+                        <li><a href="#" class="text-white text-opacity-60 text-decoration-none">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-12 col-md-6 col-lg-3">
+                    <h4 class="text-champagne uppercase-label small mb-4">Quick Links</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><a href="#contact" class="text-white text-opacity-60 text-decoration-none">Contact Us</a></li>
+                        <li class="mb-3"><a href="#" class="text-white text-opacity-60 text-decoration-none">Careers</a></li>
+                        <li class="mb-3"><a href="#" class="text-white text-opacity-60 text-decoration-none">Press Kit</a></li>
+                        <li><a href="#" class="text-white text-opacity-60 text-decoration-none">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Copyright -->
+        <div class="container py-4 border-top border-white border-opacity-5">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-6 mb-3 mb-md-0">
+                    <p class="text-white text-opacity-10 uppercase-label smaller mb-0">
+                        © 2025 Vintage & Vine Estates. Excellence is Eternal.
+                    </p>
+                </div>
+                <div class="col-12 col-md-6 text-md-end">
+                    <a href="#" class="text-white text-opacity-10 uppercase-label smaller me-4 text-decoration-none">Privacy</a>
+                    <a href="#" class="text-white text-opacity-10 uppercase-label smaller text-decoration-none">Security</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== -->
+    <!-- MODALS -->
+    <!-- ==================== -->
+
+    <!-- Booking Modal -->
+    <div class="modal fade" id="bookingModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-emerald-deep text-white rounded-4xl">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title font-serif fst-italic">Reserve Your Experience</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="bookingForm">
+                        <div class="mb-3">
+                            <label class="form-label">Select Experience</label>
+                            <select class="form-select bg-transparent text-white">
+                                <option>The Explorer ($75)</option>
+                                <option>The Connoisseur ($150)</option>
+                                <option>The Estate Grand ($350)</option>
+                            </select>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Date</label>
+                                <input type="date" class="form-control bg-transparent text-white" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Time</label>
+                                <select class="form-select bg-transparent text-white">
+                                    <option>5:00 PM</option>
+                                    <option>6:30 PM</option>
+                                    <option>8:00 PM</option>
+                                    <option>9:30 PM</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Guests</label>
+                                <select class="form-select bg-transparent text-white">
+                                    <option>1 Guest</option>
+                                    <option>2 Guests</option>
+                                    <option>3 Guests</option>
+                                    <option>4 Guests</option>
+                                    <option>5+ Guests</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Phone</label>
+                                <input type="tel" class="form-control bg-transparent text-white" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890">
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">Special Requests</label>
+                                <textarea class="form-control bg-transparent text-white" rows="3"></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-champagne w-100">Confirm Reservation</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-emerald-deep text-white rounded-4xl">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title font-serif fst-italic">Contact Concierge</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-headset text-champagne fs-1 mb-3"></i>
+                        <h4>+1 (800) VIN-1924</h4>
+                        <p class="text-white text-opacity-60">Available 9 AM - 9 PM Daily</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Shop Modal -->
+    <div class="modal fade" id="shopModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content bg-light-cream rounded-4xl">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title font-serif fst-italic text-emerald-deep">Online Wine Shop</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-emerald-deep mb-4">Browse our curated selection of wines available for delivery.</p>
+                    <!-- Shop content would go here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-light-cream rounded-4xl">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title font-serif fst-italic text-emerald-deep">Your Cart</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="cartItems">
+                        <!-- Cart items will be populated here -->
+                        <p class="text-emerald-deep text-opacity-60 text-center py-4">Your cart is empty</p>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mt-4 pt-4 border-top">
+                        <h6 class="text-emerald-deep mb-0">Total: <span id="cartTotal">$0.00</span></h6>
+                        <button class="btn btn-champagne" disabled id="checkoutBtn">Proceed to Checkout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Membership Modal -->
+    <div class="modal fade" id="membershipModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-emerald-deep text-white rounded-4xl">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title font-serif fst-italic">Wine Club Membership</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-crown text-champagne fs-1 mb-3"></i>
+                        <h4>Join the Inner Circle</h4>
+                    </div>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-2"><i class="fas fa-check text-champagne me-2"></i> Priority access to rare vintages</li>
+                        <li class="mb-2"><i class="fas fa-check text-champagne me-2"></i> Complimentary tastings</li>
+                        <li class="mb-2"><i class="fas fa-check text-champagne me-2"></i> Exclusive event invitations</li>
+                        <li class="mb-2"><i class="fas fa-check text-champagne me-2"></i> Personal sommelier consultation</li>
+                        <li><i class="fas fa-check text-champagne me-2"></i> 20% discount on purchases</li>
+                    </ul>
+                    <button class="btn btn-champagne w-100" onclick="joinMembership()">Join Now - $250/year</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pairing Quiz Modal -->
+    <div class="modal fade" id="pairingQuizModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-light-cream rounded-4xl">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title font-serif fst-italic text-emerald-deep">Wine Pairing Quiz</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="quizStep1">
+                        <h6 class="text-emerald-deep mb-3">What's your preferred taste profile?</h6>
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-outline-champagne text-start" onclick="nextQuizStep(2)">Light & Fruity</button>
+                            <button class="btn btn-outline-champagne text-start" onclick="nextQuizStep(2)">Bold & Robust</button>
+                            <button class="btn btn-outline-champagne text-start" onclick="nextQuizStep(2)">Crisp & Dry</button>
+                            <button class="btn btn-outline-champagne text-start" onclick="nextQuizStep(2)">Sweet & Smooth</button>
+                        </div>
+                    </div>
+                    <div id="quizStep2" style="display: none;">
+                        <!-- Additional quiz steps would go here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Events Modal -->
+    <div class="modal fade" id="eventsModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content bg-light-cream rounded-4xl">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title font-serif fst-italic text-emerald-deep">Event Inquiry</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <!-- Event form would go here -->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // ====================
+        // GLOBAL VARIABLES
+        // ====================
+        let cart = [];
+        let testimonials = [
+            {
+                quote: "An unparalleled sensory journey. The pairing of the 1982 Reserve with the Wagyu was nothing short of poetic.",
+                author: "Elena Moretti",
+                title: "Culinary Critic"
+            },
+            {
+                quote: "The atmosphere at Vintage & Vine captures the essence of Napa heritage while delivering world-class gastronomy.",
+                author: "Marcus Thorne",
+                title: "Lifestyle Curator"
+            },
+            {
+                quote: "Every visit feels like discovering a new chapter in the story of fine wine. A truly remarkable establishment.",
+                author: "Robert Chen",
+                title: "Wine Enthusiast Magazine"
+            }
+        ];
+        let currentTestimonial = 0;
+        let wineImages = [
+            'https://images.unsplash.com/photo-1584916201218-f4242ceb4809?auto=format&fit=crop&q=80&w=400',
+            'https://images.unsplash.com/photo-1569919650474-a7a4f86d9ed2?auto=format&fit=crop&q=80&w=400',
+            'https://images.unsplash.com/photo-1553361371-9bb220269788?auto=format&fit=crop&q=80&w=400',
+            'https://images.unsplash.com/photo-1516594915697-87eb3b1c14ea?auto=format&fit=crop&q=80&w=400',
+            'https://images.unsplash.com/photo-1547595628-c61a29f496f0?auto=format&fit=crop&q=80&w=400',
+            'https://images.unsplash.com/photo-1562601579-599dec564e06?auto=format&fit=crop&q=80&w=400'
+        ];
+
+        // ====================
+        // LOADING SCREEN
+        // ====================
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                document.getElementById('loadingScreen').style.opacity = '0';
+                setTimeout(() => {
+                    document.getElementById('loadingScreen').style.display = 'none';
+                    initializePage();
+                }, 500);
+            }, 1000);
+        });
+
+        // ====================
+        // PAGE INITIALIZATION
+        // ====================
+        function initializePage() {
+            // Initialize all components
+            initializeCarousel();
+            initializeMenuToggle();
+            initializeCategoryFilter();
+            initializeMarquee();
+            initializeEventCalendar();
+            updateCartCount();
+            applySeasonalTheme();
+            
+            // Start analytics tracking
+            trackPageView();
+            
+            // Initialize lazy loading
+            if (typeof lazysizes !== 'undefined') {
+                lazysizes.init();
+            }
+        }
+
+        // ====================
+        // HERO CAROUSEL
+        // ====================
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.hero-slide');
+        const progressBar = document.getElementById('carouselProgress');
+        let carouselInterval;
+
+        function initializeCarousel() {
+            // Show first slide
+            showSlide(currentSlide);
+            
+            // Start auto-advance
+            startCarousel();
+            
+            // Add swipe support for mobile
+            initializeSwipe();
+        }
+
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+            
+            // Reset progress bar animation
+            progressBar.style.transition = 'none';
+            progressBar.style.width = '0%';
+            void progressBar.offsetWidth; // Trigger reflow
+            progressBar.style.transition = 'width 5s linear';
+            progressBar.style.width = '100%';
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        function startCarousel() {
+            carouselInterval = setInterval(nextSlide, 5000);
+        }
+
+        // Pause on hover
+        const heroSection = document.querySelector('.hero-section');
+        heroSection.addEventListener('mouseenter', () => {
+            clearInterval(carouselInterval);
+            progressBar.style.animationPlayState = 'paused';
+        });
+        
+        heroSection.addEventListener('mouseleave', () => {
+            startCarousel();
+            progressBar.style.animationPlayState = 'running';
+        });
+
+        // Navigation buttons
+        document.getElementById('nextSlide').addEventListener('click', nextSlide);
+        document.getElementById('prevSlide').addEventListener('click', prevSlide);
+
+        // Swipe functionality for mobile
+        function initializeSwipe() {
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            heroSection.addEventListener('touchstart', e => {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+
+            heroSection.addEventListener('touchend', e => {
+                touchEndX = e.changedTouches[0].screenX;
+                if (touchStartX - touchEndX > 50) nextSlide();
+                if (touchEndX - touchStartX > 50) prevSlide();
+            });
+        }
+
+        // ====================
+        // MENU TOGGLE
+        // ====================
+        function initializeMenuToggle() {
+            document.getElementById('foodMenuBtn').addEventListener('click', function() {
+                document.getElementById('foodMenuBtn').classList.add('active');
+                document.getElementById('wineMenuBtn').classList.remove('active');
+                document.getElementById('foodMenu').classList.remove('d-none');
+                document.getElementById('wineMenu').classList.add('d-none');
+            });
+
+            document.getElementById('wineMenuBtn').addEventListener('click', function() {
+                document.getElementById('wineMenuBtn').classList.add('active');
+                document.getElementById('foodMenuBtn').classList.remove('active');
+                document.getElementById('wineMenu').classList.remove('d-none');
+                document.getElementById('foodMenu').classList.add('d-none');
+            });
+        }
+
+        // ====================
+        // WINE CATEGORY FILTER
+        // ====================
+        function initializeCategoryFilter() {
+            document.querySelectorAll('[data-filter]').forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Update active button
+                    document.querySelectorAll('[data-filter]').forEach(btn => {
+                        if (filter === 'all') {
+                            btn.classList.remove('active');
+                            btn.classList.add('btn-outline-champagne');
+                            btn.classList.remove('btn-champagne');
+                        } else if (btn.getAttribute('data-filter') === filter) {
+                            btn.classList.add('active');
+                            btn.classList.remove('btn-outline-champagne');
+                            btn.classList.add('btn-champagne');
+                        } else {
+                            btn.classList.remove('active');
+                            btn.classList.add('btn-outline-champagne');
+                            btn.classList.remove('btn-champagne');
+                        }
+                    });
+                    
+                    // Show the all button as active when all filter is selected
+                    if (filter === 'all') {
+                        document.querySelector('[data-filter="all"]').classList.add('active');
+                        document.querySelector('[data-filter="all"]').classList.remove('btn-outline-champagne');
+                        document.querySelector('[data-filter="all"]').classList.add('btn-champagne');
+                    }
+                    
+                    // Filter items
+                    document.querySelectorAll('#wineCategories [data-category]').forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                            item.style.display = 'block';
+                            item.classList.add('animate-fade-in');
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        }
+
+        // ====================
+        // MARQUEE INITIALIZATION
+        // ====================
+        function initializeMarquee() {
+            const marqueeContainer = document.getElementById('wineMarquee');
+            const marqueeContent = marqueeContainer.querySelector('.marquee-content');
+            
+            // Create marquee items
+            let marqueeHTML = '';
+            wineImages.forEach((img, idx) => {
+                marqueeHTML += `
+                    <div class="wine-slider-item d-inline-block me-4">
+                        <div class="rounded-3xl overflow-hidden position-relative protected-image" style="width: 300px; height: 400px;">
+                            <img data-src="${img}" alt="Vintage Wine ${idx + 1}" class="lazyload img-fluid w-100 h-100 object-cover grayscale">
+                            <div class="position-absolute top-0 start-0 w-100 h-100 bg-gradient-to-t from-emerald-deep"></div>
+                            <div class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-between p-4">
+                                <div class="d-flex justify-content-between">
+                                    <div class="w-10 h-10 border border-champagne border-opacity-30 rounded-circle d-flex align-items-center justify-content-center bg-emerald-deep bg-opacity-50">
+                                        <span class="text-champagne text-xs fw-bold">V&V</span>
+                                    </div>
+                                    <span class="text-white text-opacity-10 font-serif fst-italic fs-3">${idx + 1}</span>
+                                </div>
+                                <div>
+                                    <p class="text-champagne uppercase-label smaller mb-1">Estate Reserve</p>
+                                    <h4 class="text-white font-serif fst-italic">Library Vintage</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            // Duplicate for seamless loop
+            marqueeContent.innerHTML = marqueeHTML + marqueeHTML + marqueeHTML;
+            
+            // Initialize lazy loading for new images
+            if (typeof lazysizes !== 'undefined') {
+                lazysizes.init();
+            }
+        }
+
+        // ====================
+        // EVENT CALENDAR
+        // ====================
+        function initializeEventCalendar() {
+            const events = [
+                { date: '2024-12-15', title: 'Holiday Wine Pairing', type: 'tasting' },
+                { date: '2024-12-24', title: 'Christmas Eve Gala', type: 'event' },
+                { date: '2024-12-31', title: 'New Year\'s Celebration', type: 'event' },
+                { date: '2025-01-15', title: 'Winter Wine Release', type: 'release' },
+                { date: '2025-02-14', title: 'Valentine\'s Dinner', type: 'dining' }
+            ];
+            
+            const calendarEl = document.getElementById('eventCalendar');
+            let calendarHTML = '';
+            
+            events.forEach(event => {
+                const date = new Date(event.date);
+                const month = date.toLocaleString('default', { month: 'short' });
+                const day = date.getDate();
+                
+                calendarHTML += `
+                    <div class="col-6 col-md-4 col-lg mb-3">
+                        <div class="bg-white rounded-2xl p-3 text-center shadow-sm">
+                            <div class="text-champagne fw-bold">${month}</div>
+                            <div class="display-6 fw-bold text-emerald-deep">${day}</div>
+                            <div class="small text-emerald-deep text-opacity-60">${event.title}</div>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            calendarEl.innerHTML = calendarHTML;
+        }
+
+        // ====================
+        // SHOPPING CART
+        // ====================
+        function addToCart(productId, productName, productPrice) {
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cart.push({
+                    id: productId,
+                    name: productName,
+                    price: parseFloat(productPrice),
+                    quantity: 1
+                });
+            }
+            
+            updateCartCount();
+            updateCartModal();
+            showNotification(`${productName} added to cart`);
+        }
+
+        function updateCartCount() {
+            const count = cart.reduce((total, item) => total + item.quantity, 0);
+            document.getElementById('cartCount').textContent = count;
+        }
+
+        function updateCartModal() {
+            const cartItemsEl = document.getElementById('cartItems');
+            const cartTotalEl = document.getElementById('cartTotal');
+            const checkoutBtn = document.getElementById('checkoutBtn');
+            
+            if (cart.length === 0) {
+                cartItemsEl.innerHTML = '<p class="text-emerald-deep text-opacity-60 text-center py-4">Your cart is empty</p>';
+                cartTotalEl.textContent = '$0.00';
+                checkoutBtn.disabled = true;
+                return;
+            }
+            
+            let itemsHTML = '';
+            let total = 0;
+            
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                
+                itemsHTML += `
+                    <div class="d-flex justify-content-between align-items-center mb-3 pb-3 border-bottom">
+                        <div>
+                            <h6 class="text-emerald-deep mb-1">${item.name}</h6>
+                            <small class="text-emerald-deep text-opacity-60">$${item.price.toFixed(2)} × ${item.quantity}</small>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <span class="text-emerald-deep fw-bold">$${itemTotal.toFixed(2)}</span>
+                            <button class="btn btn-sm btn-outline-champagne" onclick="removeFromCart(${item.id})">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            cartItemsEl.innerHTML = itemsHTML;
+            cartTotalEl.textContent = `$${total.toFixed(2)}`;
+            checkoutBtn.disabled = false;
+        }
+
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            updateCartCount();
+            updateCartModal();
+            showNotification('Item removed from cart');
+        }
+
+        // ====================
+        // TESTIMONIALS
+        // ====================
+        function nextTestimonial() {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            updateTestimonial();
+        }
+
+        function prevTestimonial() {
+            currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+            updateTestimonial();
+        }
+
+        function updateTestimonial() {
+            const testimonial = testimonials[currentTestimonial];
+            const quoteEl = document.querySelector('.testimonial-quote');
+            const authorEl = quoteEl.nextElementSibling.querySelector('p:first-child');
+            const titleEl = quoteEl.nextElementSibling.querySelector('p:last-child');
+            
+            quoteEl.textContent = testimonial.quote;
+            authorEl.textContent = testimonial.author;
+            titleEl.textContent = testimonial.title;
+        }
+
+        // ====================
+        // THEME TOGGLE
+        // ====================
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            const icon = themeToggle.querySelector('i');
+            
+            if (document.body.classList.contains('light-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+                localStorage.setItem('theme', 'light');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            document.body.classList.add('light-mode');
+            themeToggle.querySelector('i').classList.remove('fa-moon');
+            themeToggle.querySelector('i').classList.add('fa-sun');
+        }
+
+        // ====================
+        // SEASONAL THEME
+        // ====================
+        function applySeasonalTheme() {
+            const month = new Date().getMonth();
+            const root = document.documentElement;
+            
+            // Remove existing seasonal classes
+            document.body.classList.remove('winter-theme', 'spring-theme', 'summer-theme', 'autumn-theme');
+            
+            // Apply seasonal class
+            if (month >= 11 || month < 2) {
+                document.body.classList.add('winter-theme');
+            } else if (month >= 2 && month < 5) {
+                document.body.classList.add('spring-theme');
+            } else if (month >= 5 && month < 8) {
+                document.body.classList.add('summer-theme');
+            } else {
+                document.body.classList.add('autumn-theme');
+            }
+        }
+
+        // ====================
+        // SMOOTH SCROLLING
+        // ====================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const navbarCollapse = document.getElementById('navbarContent');
+                    if (navbarCollapse.classList.contains('show')) {
+                        const toggler = document.getElementById('navbarToggler');
+                        toggler.click();
+                    }
+                }
+            });
+        });
+
+        // ====================
+        // NAVBAR SCROLL EFFECT
+        // ====================
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('mainNavbar');
+            const backToTopBtn = document.getElementById('backToTop');
+            
+            if (window.scrollY > 20) {
+                navbar.classList.add('navbar-scrolled');
+                backToTopBtn.style.display = 'flex';
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+                backToTopBtn.style.display = 'none';
+            }
+        });
+
+        // ====================
+        // BACK TO TOP
+        // ====================
+        document.getElementById('backToTop').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ====================
+        // MOBILE MENU ANIMATION
+        // ====================
+        const navbarToggler = document.getElementById('navbarToggler');
+        navbarToggler.addEventListener('click', function() {
+            const icon = this.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // ====================
+        // FORM HANDLING
+        // ====================
+        document.getElementById('contactForm')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            showNotification('Message sent successfully!');
+            this.reset();
+        });
+
+        document.getElementById('bookingForm')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            showNotification('Reservation request submitted!');
+            const modal = bootstrap.Modal.getInstance(document.getElementById('bookingModal'));
+            modal.hide();
+        });
+
+        // ====================
+        // NOTIFICATIONS
+        // ====================
+        function showNotification(message) {
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.className = 'position-fixed bottom-3 start-50 translate-middle-x bg-champagne text-emerald-deep px-4 py-3 rounded-3xl shadow-lg animate-fade-in z-9999';
+            notification.style.maxWidth = '90%';
+            notification.innerHTML = `
+                <div class="d-flex align-items-center gap-3">
+                    <i class="fas fa-check-circle"></i>
+                    <span>${message}</span>
+                </div>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Remove after 3 seconds
+            setTimeout(() => {
+                notification.style.opacity = '0';
+                notification.style.transform = 'translateX(-50%) translateY(20px)';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+
+        // ====================
+        // WEATHER WIDGET
+        // ====================
+        function updateWeather() {
+            // In a real implementation, this would fetch from a weather API
+            const weatherInfo = document.getElementById('weatherInfo');
+            const conditions = ['Sunny', 'Partly Cloudy', 'Cloudy', 'Rainy', 'Clear'];
+            const temps = [65, 68, 72, 70, 75];
+            const randomIndex = Math.floor(Math.random() * conditions.length);
+            
+            weatherInfo.innerHTML = `${temps[randomIndex]}°F • ${conditions[randomIndex]}`;
+        }
+
+        // Update weather every hour
+        updateWeather();
+        setInterval(updateWeather, 3600000);
+
+        // ====================
+        // ANALYTICS TRACKING
+        // ====================
+        function trackPageView() {
+            // Track page view
+            console.log('Page viewed:', window.location.href);
+            
+            // Track CTA clicks
+            document.querySelectorAll('.interactive-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    console.log('CTA clicked:', this.textContent.trim());
+                });
+            });
+            
+            // Track scroll depth
+            window.addEventListener('scroll', function() {
+                const scrollPercentage = (window.scrollY / 
+                    (document.body.scrollHeight - window.innerHeight)) * 100;
+                
+                if (scrollPercentage > 25 && scrollPercentage < 30) {
+                    console.log('Scroll depth: 25%');
+                }
+                if (scrollPercentage > 50 && scrollPercentage < 55) {
+                    console.log('Scroll depth: 50%');
+                }
+                if (scrollPercentage > 75 && scrollPercentage < 80) {
+                    console.log('Scroll depth: 75%');
+                }
+            });
+        }
+
+        // ====================
+        // ADD TO CART BUTTONS
+        // ====================
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function() {
+                const id = this.getAttribute('data-id');
+                const name = this.getAttribute('data-name');
+                const price = this.getAttribute('data-price');
+                addToCart(id, name, price);
+            });
+        });
+
+        // ====================
+        // ADDITIONAL FUNCTIONS
+        // ====================
+        function purchaseGiftCard() {
+            const amount = document.getElementById('giftCardAmount').value;
+            showNotification(`Gift card purchased for $${amount}`);
+        }
+
+        function joinMembership() {
+            showNotification('Welcome to the Wine Club!');
+            const modal = bootstrap.Modal.getInstance(document.getElementById('membershipModal'));
+            modal.hide();
+        }
+
+        function subscribeNewsletter() {
+            const email = document.getElementById('newsletterEmail').value;
+            if (email) {
+                showNotification('Thank you for subscribing!');
+                document.getElementById('newsletterEmail').value = '';
+            }
+        }
+
+        function nextQuizStep(step) {
+            // Quiz logic would go here
+            showNotification('Quiz completed! Check your recommendations.');
+            const modal = bootstrap.Modal.getInstance(document.getElementById('pairingQuizModal'));
+            modal.hide();
+        }
+
+        // ====================
+        // SERVICE WORKER REGISTRATION
+        // ====================
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js').catch(error => {
+                    console.log('ServiceWorker registration failed:', error);
+                });
+            });
+        }
+
+        // ====================
+        // PRINT FUNCTIONALITY
+        // ====================
+        window.addEventListener('beforeprint', function() {
+            document.querySelectorAll('.no-print').forEach(el => {
+                el.style.display = 'none';
+            });
+        });
+
+        window.addEventListener('afterprint', function() {
+            document.querySelectorAll('.no-print').forEach(el => {
+                el.style.display = '';
+            });
+        });
+    </script>
+</body>
+</html>
